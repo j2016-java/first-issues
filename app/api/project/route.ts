@@ -11,8 +11,8 @@ export const GET = async (req: NextRequest) => {
     const order = url.searchParams.get("order")?.toLowerCase() === "desc" ? -1 : 1;
     const page = parseInt(url.searchParams.get("page") || "1");
     const limit = parseInt(url.searchParams.get("limit") || "100");
-    const max_stars = parseInt(url.searchParams.get("max_stars")|| "");
-    const min_stars = parseInt(url.searchParams.get("min_stars") || "");
+    const max_stars = parseInt(url.searchParams.get("max_stars")|| "") || 100000;
+    const min_stars = parseInt(url.searchParams.get("min_stars") || "") || 0;
 
     const query: any = {};
     if (lang === 'c++') {

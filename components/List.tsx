@@ -32,7 +32,7 @@ const List = ({ langFilter, sortFilter, starsRange }: Props) => {
 
 
   let { isLoading, data: repos } = useFetch<Repo[]>({
-    url: `/api/project?lang=${langFilter}&sort_by=${sortFilter.value}&order=${sortFilter.order}&min_stars=${starsRange.min_stars}&max_stars=${starsRange.max_stars}`,
+    url: `/api/project?lang=${langFilter}&sort_by=${sortFilter.value || ''}&order=${sortFilter.order || ''}&min_stars=${starsRange.min_stars}&max_stars=${starsRange.max_stars}`,
   });
 
   console.log("repo", repos)
